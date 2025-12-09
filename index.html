@@ -94,7 +94,8 @@
       text-decoration: none;
       font-weight: 800;
       font-size: 1.2rem;
-      display: inline-block;
+      display: inline-flex; /* Cambiado a inline-flex para mejor alineación */
+      align-items: center;  /* Centrar verticalmente icono y texto */
       transition: all 0.3s ease;
       box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
       border: 2px solid var(--primary);
@@ -105,6 +106,12 @@
       color: var(--primary);
       box-shadow: 0 0 30px rgba(0, 255, 153, 0.6);
       transform: translateY(-3px);
+    }
+
+    /* NUEVO: Ajuste específico para que el icono de Play Store se vea bonito y alineado */
+    .download-btn i {
+        margin-right: 12px;    /* Espacio exacto entre el icono y el texto */
+        font-size: 1.4rem;     /* Ligeramente más grande que el texto para resaltar */
     }
 
     .version-tag {
@@ -172,10 +179,10 @@
       padding: 10px;
       border-radius: 15px;
       border: 1px solid #333;
-      display: flex;             /* Activamos Flexbox */
-      flex-direction: column;    /* Elementos uno debajo del otro */
-      align-items: center;       /* Centrado horizontal perfecto */
-      text-align: center;        /* Asegura que el texto esté centrado */
+      display: flex;              /* Activamos Flexbox */
+      flex-direction: column;     /* Elementos uno debajo del otro */
+      align-items: center;        /* Centrado horizontal perfecto */
+      text-align: center;         /* Asegura que el texto esté centrado */
     }
 
     .gallery-item img {
@@ -266,12 +273,13 @@
   <main>
     <section class="hero">
       <h1>Navegación Segura y Sin Límites</h1>
-      <p>La mejor VPN desarrollada para Claro en Ecuador, con soporte para múltiples protocolos.</p>
+      <p>La mejor VPN desarrollada en Ecuador, con soporte para múltiples protocolos.</p>
       
-      <a class="download-btn" href="https://github.com/ProNeet-27/ProNeet-VPN3/releases/download/v3.1/ProNeet.VPN++.v3.1.apk">
-        <i class="fas fa-download"></i> DESCARGAR APK
+      <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.proneet.vpn" target="_blank">
+        <i class="fab fa-google-play"></i> DESCARGAR DESDE PLAY STORE
       </a>
-      <span class="version-tag">Versión 3.1 build (2)</span>
+
+      <span class="version-tag">Versión 27.11 build (26)</span>
     </section>
 
     <div class="grid-container">
@@ -279,9 +287,8 @@
       <article class="card">
         <h2>⚙️ Instalación</h2>
         <ul>
-          <li>Descarga el archivo <strong>.apk</strong>.</li>
-          <li>Ábrelo y permite "Orígenes desconocidos".</li>
-          <li>Instala la app en tu Android.</li>
+          <li>Instala la app desde <strong>Google Play Store</strong>.</li>
+          <li>Ábrela y concede los permisos necesarios.</li>
           <li>¡Elige tu servidor y conéctate!</li>
         </ul>
       </article>
