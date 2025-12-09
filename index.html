@@ -85,20 +85,52 @@
       margin-bottom: 30px;
     }
 
-    /* Botón de descarga */
+    /* --- BOTÓN DE DESCARGA (2 LÍNEAS CENTRADAS) --- */
     .download-btn {
       background-color: var(--primary);
       color: #000;
-      padding: 18px 40px;
+      padding: 12px 40px; 
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 800;
-      font-size: 1.2rem;
-      display: inline-flex; /* Cambiado a inline-flex para mejor alineación */
-      align-items: center;  /* Centrar verticalmente icono y texto */
+      
+      /* Flexbox para centrar todo el contenido */
+      display: inline-flex;
+      align-items: center; 
+      justify-content: center;
+      
       transition: all 0.3s ease;
       box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
       border: 2px solid var(--primary);
+    }
+
+    .download-btn i {
+      margin-right: 15px;
+      font-size: 2rem; 
+    }
+
+    /* Contenedor del texto (Columna centrada) */
+    .btn-text {
+      display: flex;
+      flex-direction: column;
+      
+      /* Alineación centrada horizontal y verticalmente */
+      align-items: center; 
+      text-align: center;
+      justify-content: center;
+    }
+
+    .btn-line1 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 3px; /* Pequeño espacio entre líneas */
+    }
+
+    .btn-line2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1; 
     }
 
     .download-btn:hover {
@@ -108,15 +140,9 @@
       transform: translateY(-3px);
     }
 
-    /* NUEVO: Ajuste específico para que el icono de Play Store se vea bonito y alineado */
-    .download-btn i {
-        margin-right: 12px;    /* Espacio exacto entre el icono y el texto */
-        font-size: 1.4rem;     /* Ligeramente más grande que el texto para resaltar */
-    }
-
     .version-tag {
       display: block;
-      margin-top: 10px;
+      margin-top: 15px;
       font-size: 0.85rem;
       color: #666;
     }
@@ -173,16 +199,15 @@
       gap: 20px;
     }
 
-    /* CORRECCIÓN AQUÍ: Centrar contenido de la tarjeta de galería */
     .gallery-item {
       background: #000;
       padding: 10px;
       border-radius: 15px;
       border: 1px solid #333;
-      display: flex;              /* Activamos Flexbox */
-      flex-direction: column;     /* Elementos uno debajo del otro */
-      align-items: center;        /* Centrado horizontal perfecto */
-      text-align: center;         /* Asegura que el texto esté centrado */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .gallery-item img {
@@ -262,6 +287,25 @@
       color: #444;
       font-size: 0.9rem;
     }
+
+    /* --- AJUSTE MÓVIL EXACTO --- */
+    @media (max-width: 600px) {
+      .download-btn {
+        /* 12px arriba/abajo: Equilibrio vertical.
+           35px lados: Medida exacta para equilibrio horizontal.
+        */
+        padding: 12px 35px;   
+        width: auto;
+      }
+      
+      .download-btn i {
+        font-size: 1.8rem;
+        margin-right: 12px;
+      }
+      
+      .btn-line1 { font-size: 0.7rem; }
+      .btn-line2 { font-size: 1.1rem; }
+    }
   </style>
 </head>
 <body>
@@ -276,9 +320,13 @@
       <p>La mejor VPN desarrollada en Ecuador, con soporte para múltiples protocolos.</p>
       
       <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.proneet.vpn" target="_blank">
-        <i class="fab fa-google-play"></i> DESCARGAR DESDE PLAY STORE
+        <i class="fab fa-google-play"></i>
+        <div class="btn-text">
+            <span class="btn-line1">DESCARGAR DESDE</span>
+            <span class="btn-line2">GOOGLE PLAY</span>
+        </div>
       </a>
-
+      
       <span class="version-tag">Versión 27.11 build (26)</span>
     </section>
 
